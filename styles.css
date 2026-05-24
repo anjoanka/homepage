@@ -1,3 +1,7 @@
+/* ===== IMPORT FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ===== GENERAL STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +9,9 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
   line-height: 1.5;
+  background: #f0ede8;
 
   --primary-text-color: #181820;
   --secondary-text-color: #5c5c62;
@@ -40,6 +45,9 @@ body {
   box-shadow: 1px 1px 7px 7px #f5f5f5;
   padding: 30px 0;
   max-width: 900px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .resume__block {
@@ -67,7 +75,7 @@ body {
   }
 }
 
-
+/* ===== CONTACT INFO STYLES ===== */
 .contact-info__header,
 .contact-info__sub-header {
   text-align: center;
@@ -78,11 +86,18 @@ body {
   margin-bottom: 15px;
   text-decoration-color: var(--text-decoration-color);
   text-decoration-line: underline;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.02em;
 }
 
 .contact-info__sub-header {
   color: var(--secondary-text-color);
   margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .contact-info__block {
@@ -100,6 +115,11 @@ body {
   text-decoration: none;
   display: flex;
   justify-content: start;
+  transition: color 0.2s ease;
+}
+
+.contact-info__item:hover {
+  color: var(--text-decoration-color);
 }
 
 .contact-info__item:not(:last-child) {
@@ -127,11 +147,16 @@ body {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border: 3px solid;
-  border-color: var(--text-decoration-color);
+  border: 3px solid var(--text-decoration-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.contact-info__avatar:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 25px rgba(255, 154, 0, 0.3);
+}
 
+/* ===== INTRO AND SKILLS STYLES ===== */
 .intro {
   display: flex;
   justify-content: start;
@@ -142,6 +167,7 @@ body {
   width: 30px;
   display: flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .intro__icon {
@@ -162,6 +188,7 @@ body {
   color: var(--secondary-text-color);
   text-align: center;
   margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
 }
 
 .skills__text {
@@ -169,7 +196,7 @@ body {
   text-align: justify;
 }
 
-
+/* ===== EXPERIENCE AND ADDITIONAL INFO STYLES ===== */
 .experiences {
   flex: 1 1 60%;
   margin-right: 50px;
@@ -179,6 +206,7 @@ body {
   color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
 }
 
 .experiences__company-header-durability {
@@ -231,6 +259,7 @@ body {
   color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
 }
 
 .additional-info__education-university-durability {
@@ -258,8 +287,160 @@ body {
   color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
 }
 
 .additional-info__languages-item {
   color: var(--secondary-text-color);
 }
+
+/* ── Skill tags ── */
+      .skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .skill-tag {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: 20px;
+        border: 1.5px solid var(--border-color);
+        color: var(--secondary-text-color);
+        font-size: 0.85rem;
+        background: #fff9f0;
+      }
+
+      /* ── Certifications / Timeline ── */
+      .certs__header {
+        color: var(--secondary-text-color);
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .cert-timeline {
+        position: relative;
+        padding-left: 24px;
+        border-left: 2px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .cert-item {
+        position: relative;
+      }
+      .cert-item::before {
+        content: '';
+        position: absolute;
+        left: -29px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--text-decoration-color);
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px var(--text-decoration-color);
+      }
+      .cert-year {
+        font-size: 0.78rem;
+        color: var(--durability-text-color);
+        margin-bottom: 2px;
+      }
+      .cert-title {
+        font-size: 0.95rem;
+        color: var(--primary-text-color);
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cert-org {
+        font-size: 0.85rem;
+        color: var(--secondary-text-color);
+      }
+
+      /* ── Strengths / Weaknesses ── */
+      .honest__header {
+        color: var(--secondary-text-color);
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .honest-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media screen and (max-width: 576px) {
+        .honest-grid { grid-template-columns: 1fr; }
+      }
+      .honest-card {
+        border: 1.5px solid var(--border-color);
+        border-radius: 10px;
+        padding: 16px 18px;
+        background: #fff9f0;
+      }
+      .honest-card__label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-decoration-color);
+        margin-bottom: 12px;
+      }
+      .honest-card__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .honest-card__list li {
+        font-size: 0.88rem;
+        color: var(--secondary-text-color);
+        padding-left: 16px;
+        position: relative;
+        line-height: 1.45;
+      }
+      .honest-card__list li::before {
+        content: '—';
+        position: absolute;
+        left: 0;
+        color: var(--text-decoration-color);
+      }
+
+      /* ── Hobbies ── */
+      .section-label {
+        color: var(--secondary-text-color);
+        text-align: left;
+        margin-bottom: 16px;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .hobbies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .hobby-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 16px;
+        border-radius: 20px;
+        border: 1.5px solid var(--border-color);
+        color: var(--secondary-text-color);
+        font-size: 0.88rem;
+        background: #fff9f0;
+      }
+
+      /* ── Easter egg ── */
+      .easter-egg {
+        display: none;
+        margin-top: 12px;
+        font-size: 0.8rem;
+        color: var(--secondary-text-color);
+        text-align: center;
+        font-style: italic;
+        animation: fadein 0.4s ease;
+      }
+      .easter-egg.visible { display: block; }
+      @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
